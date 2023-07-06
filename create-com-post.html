@@ -9,14 +9,14 @@
 
 <body>
     <header>
-        <a href="./">Home</a>
+        <button type="button"><a href="./">Página Inicial</a></button>
         <h1>Create com POST</h1>
     </header>
 
     <form action="" method="post">
 
         <label for="id">ID:</label>
-        <input type="text" id="id" disabled><br>
+        <input type="text" id="id"><br>
 
         <label for="descricao">Descrição:</label>
         <input type="text" id="descricao"><br>
@@ -31,6 +31,42 @@
     <div id="listaProdutos"></div>
     
     <script>
+       
+       ////////////////////// ---STYLE--- //////////////////////////
+
+        document.querySelector("button").style.padding = "10px";
+        document.querySelector("button").style.backgroundColor = "#e9d6da";
+        document.querySelector("button").style.borderColor = "#d99aa3";
+        document.querySelector("button").style.border;
+
+        ////////////////////////////////////////////////////////////
+
+        document.querySelector("a").style.textDecoration = "none";
+        document.querySelector("a").style.fontSize = "15px";
+        document.querySelector("a").style.color = "#a24261";
+        document.querySelector("a:link").style.color = "#a24261";
+
+        ////////////////////////////////////////////////////////////
+
+        document.querySelector("h1").style.color = "#d38787";
+        document.querySelector("h1").style.textAlign = "center";
+        document.querySelector("h1").style.fontSize = "50px";
+
+        ////////////////////////////////////////////////////////////
+
+        document.querySelector("form").style.display = "block";
+        document.querySelector("form").style.marginTop = "5px"
+        ///////////////////////////////////////////////////////////
+
+        document.querySelector("#listaProdutos").style.columnCount = "3";
+        document.querySelector("#listaProdutos").style.columnGap = "80px";
+        document.querySelector("#listaProdutos").style.columnRule = "4px double #a69db9";
+        document.querySelector("#listaProdutos").style.columnWidth = "100px";
+        document.querySelector("div").style.margin ="45px";
+        ///////////////////////////////////////////////////////////
+
+
+
 
         document.querySelector('#btCadastrar').addEventListener('click', () => {
 
@@ -73,6 +109,8 @@
                     ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
 
                     ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
+
+
                     
                     document.querySelector('#listaProdutos').appendChild(ul);
                 }
