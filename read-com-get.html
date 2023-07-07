@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,33 +12,18 @@
         <a href="./">Home</a>
         <h1>Read com GET</h1>
     </header>
+
+    <button type="button" id="btnFetch">Fetch (buscar)</button>
     <div id="listaProdutos"></div>
+
+    <script src="./assets/scripts/script.js"></script>
+
+    <script src="./assets/scripts/style-pg.js"></script>
     
     <script>
-
-        fetch('http://localhost:3000/produtos', {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-            .then(resposta => resposta.json())
-            .then(resposta => {
-                
-                for(let i = 0; i < resposta.length; i++) {
-
-                    const ul = document.createElement('ul');
-
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
-
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
-
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
-                    
-                    document.querySelector('#listaProdutos').appendChild(ul);
-                }
-                
-            });
+        document.querySelector('#btnFetch').addEventListener('click', () => {
+            getProdutos();
+        });
     </script>
 </body>
 

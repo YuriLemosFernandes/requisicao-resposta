@@ -2,53 +2,9 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "Sapato social Manhattan",
-      "preco": 199.9
-    },
-    {
-      "id": 2,
-      "descricao": "Sapato casual Brooklyn",
-      "preco": 159.9
-    },
-    {
-      "id": 3,
-      "descricao": "Sandália social Queens",
-      "preco": 112.9
-    },
-    {
-      "id": 4,
-      "descricao": "Sandália casual Bronx",
-      "preco": 122.9
-    },
-    {
-      "id": 5,
-      "descricao": "Alpargatas Staten Island",
-      "preco": 99.9
-    },
-    {
-      "descricao": "Cinto de couro Crocodilo Dundie",
-      "preco": "59.90",
-      "id": 6
-    },
-    {
-      "id": 7,
-      "descricao": "Bolsa Rhode Island",
-      "preco": "58.90"
-    },
-    {
-      "id": 8,
-      "descricao": "Bolsa teste",
-      "preco": "25.90"
-    },
-    {
-      "id": 9,
-      "descricao": "sapato social manhattan",
-      "preco": "199.9"
-    },
-    {
-      "id": 10,
       "descricao": "",
-      "preco": ""
+      "preco": "",
+      "imagem": ""
     }
   ],
   "usuarios": [

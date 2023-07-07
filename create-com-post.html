@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interação com APIs | Create com POST</title>
+    <title>Cadastro de produtos</title>
 </head>
 
 <body>
-    <header>
-        <button type="button"><a href="./">Página Inicial</a></button>
-        <h1>Create com POST</h1>
-    </header>
+    <head>
+        <a href="./">Home</a>
+        <h1>Create usando o método POST</h1>
+    </head>
 
+    <div id="resposta"></div>
+    
     <form action="" method="post">
-
         <label for="id">ID:</label>
         <input type="text" id="id"><br>
 
@@ -24,99 +25,47 @@
         <label for="preco">Preço:</label>
         <input type="text" id="preco"><br>
 
-        <button type="button" id="btCadastrar">Cadastrar</button>
+        <label for="imagem">Imagem:</label>
+        <input type="text" id="imagem"><br>
 
+        <button type="button" id="btnCadastrar">Cadastrar</button>
     </form>
 
     <div id="listaProdutos"></div>
+
+    <script src="./assets/scripts/script.js"></script>
+    <script src="./assets/scripts/style-cp.js"></script>
     
     <script>
-       
-       ////////////////////// ---STYLE--- //////////////////////////
-
-        document.querySelector("button").style.padding = "10px";
-        document.querySelector("button").style.backgroundColor = "#e9d6da";
-        document.querySelector("button").style.borderColor = "#d99aa3";
-        document.querySelector("button").style.border;
-
-        ////////////////////////////////////////////////////////////
-
-        document.querySelector("a").style.textDecoration = "none";
-        document.querySelector("a").style.fontSize = "15px";
-        document.querySelector("a").style.color = "#a24261";
-        document.querySelector("a:link").style.color = "#a24261";
-
-        ////////////////////////////////////////////////////////////
-
-        document.querySelector("h1").style.color = "#d38787";
-        document.querySelector("h1").style.textAlign = "center";
-        document.querySelector("h1").style.fontSize = "50px";
-
-        ////////////////////////////////////////////////////////////
-
-        document.querySelector("form").style.display = "block";
-        document.querySelector("form").style.marginTop = "5px"
-        ///////////////////////////////////////////////////////////
-
-        document.querySelector("#listaProdutos").style.columnCount = "3";
-        document.querySelector("#listaProdutos").style.columnGap = "80px";
-        document.querySelector("#listaProdutos").style.columnRule = "4px double #a69db9";
-        document.querySelector("#listaProdutos").style.columnWidth = "100px";
-        document.querySelector("div").style.margin ="45px";
-        ///////////////////////////////////////////////////////////
-
-
-
-
-        document.querySelector('#btCadastrar').addEventListener('click', () => {
+        document.querySelector('#btnCadastrar').addEventListener('click', () => {
 
             const dados = {
-                'id': null,
+                'id': document.querySelector('#id').value,
                 'descricao': document.querySelector('#descricao').value,
-                'preco': document.querySelector('#preco').value
-            }
+                'preco': document.querySelector('#preco').value,
+                'imagem': document.querySelector('#imagem').value
+            };
 
-            fetch('http://localhost:3000/produtos', {
+            fetch(`http://localhost:3000/produtos`, {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json'
                 },
                 body: JSON.stringify(dados)
             })
-            .then(resposta => {
-                if(resposta.ok) {
-                    alert('Produto cadastrado');
-                }
-            });
+                .then(response => {
+                    if (response.ok) {
+                        document.querySelector('#resposta').innerHTML = 'Produto cadastrado!';
+                    }
+                })
+
+            getProdutos();
 
         });
 
-        fetch('http://localhost:3000/produtos', {
-            method: 'GET',
-            headers: {
-                'Content-type': 'application/json'
-            }
-        })
-            .then(resposta => resposta.json())
-            .then(resposta => {
-                
-                for(let i = 0; i < resposta.length; i++) {
-
-                    const ul = document.createElement('ul');
-
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
-
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
-
-                    ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
-
-
-                    
-                    document.querySelector('#listaProdutos').appendChild(ul);
-                }
-                
-            });
+        getProdutos();
     </script>
+    
 </body>
 
 </html>
