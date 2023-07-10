@@ -28,7 +28,7 @@
         <label for="imagem">Imagem:</label>
         <input type="text" id="imagem"><br>
 
-        <button type="button" id="btnCadastrar">Cadastrar</button>
+        <button type="button" id="btCadastrar">Cadastrar</button>
     </form>
 
     <div id="listaProdutos"></div>
@@ -37,10 +37,10 @@
     <script src="./assets/scripts/style-cp.js"></script>
     
     <script>
-        document.querySelector('#btnCadastrar').addEventListener('click', () => {
+        document.querySelector('#btCadastrar').addEventListener('click', () => {
 
             const dados = {
-                'id': document.querySelector('#id').value,
+                'id': null,
                 'descricao': document.querySelector('#descricao').value,
                 'preco': document.querySelector('#preco').value,
                 'imagem': document.querySelector('#imagem').value
@@ -55,7 +55,7 @@
             })
                 .then(response => {
                     if (response.ok) {
-                        document.querySelector('#resposta').innerHTML = 'Produto cadastrado!';
+                  document.querySelector('#resposta').innerHTML = 'Produto cadastrado!';
                     }
                 })
 

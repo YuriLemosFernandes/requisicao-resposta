@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização de produtos</title>
+    <link rel="stylesheet"  href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;1,100&display=swap');
+      </style>
+</head>
+
+<body>
+    <header>
+        <a href="./">Home</a>
+        <h1>Update usando o método PUT</h1>
+    </header>
+    
+
+
+    <div id="resposta"></div>
+    <form action="" method="post">
+        <label for="id">ID:</label> 
+        <input type="text" id="id"><br>
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao"><br>
+
+        <label for="preco">Preço:</label> 
+        <input type="text" id="preco"><br>
+
+        <label for="imagem">Imagem:</label>
+        <input type="text" id="imagem"><br>
+
+        <button type="button" id="btnAtualizar">Atualizar</button>
+    </form>
+
+    <div id="listaProdutos"></div>
+    <script src="./assets/scripts/get.js"></script>
+    
+    <script>
+        
+        document.querySelector('#btnAtualizar').addEventListener('click',
+            () => {
+                const id = document.querySelector('#id').value
+                const dados = {
+                    'id': null,
+                    'descricao': document.querySelector('#descricao').value,
+                    'preco': document.querySelector('#preco').value,
+                    'imagem': document.querySelector('#imagem').value
+                }
+
+                fetch(`http://localhost:3000/produtos/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-type': 'application/json'
+                    },
+                    body: JSON.stringify(dados)
+                })
+
+                    .then(response => {
+                        if (response.ok) {
+                            document.querySelector('#resposta').innerHTML = 'Produto Atualizado!';
+                        }
+
+                    })
+
+                getProdutos()
+            })
+
+        getProdutos()
+
+    </script>
+
+</body>
+
+</html>

@@ -2,9 +2,14 @@
   "produtos": [
     {
       "id": 1,
-      "descricao": "",
-      "preco": "",
-      "imagem": ""
+      "descricao": "snivy",
+      "preco": "26"
+    },
+    {
+      "id": 2,
+      "descricao": "snivy",
+      "preco": "26",
+      "imagem": "snivy.png"
     }
   ],
   "usuarios": [
