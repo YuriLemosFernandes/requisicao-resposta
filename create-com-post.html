@@ -16,14 +16,18 @@
     <div id="resposta"></div>
     
     <form action="" method="post">
+
         <label for="id">ID:</label>
-        <input type="text" id="id"><br>
+        <input type="text" id="id" disabled><br>
 
-        <label for="descricao">Descrição:</label>
-        <input type="text" id="descricao"><br>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome"><br>
 
-        <label for="preco">Preço:</label>
-        <input type="text" id="preco"><br>
+        <label for="evolucao">Evolução:</label>
+        <input type="text" id="evolucao"><br>
+
+        <label for="tipo">Tipo:</label>
+        <input type="text" id="tipo"><br>
 
         <label for="imagem">Imagem:</label>
         <input type="text" id="imagem"><br>
@@ -41,8 +45,9 @@
 
             const dados = {
                 'id': null,
-                'descricao': document.querySelector('#descricao').value,
-                'preco': document.querySelector('#preco').value,
+                'nome': document.querySelector('#nome').value,
+                'evolucao': document.querySelector('#evolucao').value,
+                'tipo': document.querySelector('#tipo').value,
                 'imagem': document.querySelector('#imagem').value
             };
 
@@ -55,7 +60,7 @@
             })
                 .then(response => {
                     if (response.ok) {
-                  document.querySelector('#resposta').innerHTML = 'Produto cadastrado!';
+                      document.querySelector('#resposta').innerHTML = 'Produto cadastrado!';
                     }
                 })
 

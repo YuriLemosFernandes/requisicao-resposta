@@ -27,6 +27,8 @@ function getProdutos() {
 
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].id;
 
+                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].nome;
+
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
 
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;

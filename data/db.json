@@ -1,17 +1,5 @@
 {
-  "produtos": [
-    {
-      "id": 1,
-      "descricao": "snivy",
-      "preco": "26"
-    },
-    {
-      "id": 2,
-      "descricao": "snivy",
-      "preco": "26",
-      "imagem": "snivy.png"
-    }
-  ],
+  "produtos": [],
   "usuarios": [
     {
       "id": 1,
