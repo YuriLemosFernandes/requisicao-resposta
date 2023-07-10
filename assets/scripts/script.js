@@ -29,9 +29,9 @@ function getProdutos() {
 
                 ul.appendChild(document.createElement('li')).innerHTML = resposta[i].nome;
 
-                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].descricao;
+                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].evolucao;
 
-                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].preco;
+                ul.appendChild(document.createElement('li')).innerHTML = resposta[i].tipo;
 
                 ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', `./assets/images/${resposta[i].imagem}`);
 

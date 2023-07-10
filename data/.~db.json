@@ -6,6 +6,13 @@
       "evolucao": "primeira",
       "tipo": "grama",
       "imagem": "snivy.png"
+    },
+    {
+      "id": 2,
+      "nome": "chimchar",
+      "evolucao": "primeira",
+      "tipo": "fogo",
+      "imagem": "chimchar.png"
     }
   ],
   "usuarios": [

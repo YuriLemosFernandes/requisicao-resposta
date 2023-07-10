@@ -23,7 +23,6 @@
        ////////////////////////////////////////////////////////////
 
        document.querySelector("form").style.display = "block";
-       document.querySelector("form").style.marginTop = "5px"
-
+       document.querySelector("form").style.marginTop = "50px";
 
        ///////////////////////////////////////////////////////////
