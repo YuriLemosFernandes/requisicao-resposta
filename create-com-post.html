@@ -8,14 +8,15 @@
 </head>
 
 <body>
+
     <head>
         <a href="./">Home</a>
         <h1>Create usando o método POST</h1>
     </head>
 
     <div id="resposta"></div>
-    
-    <form action="" method="post">
+
+    <form action="" method="post" id="forms">
 
         <label for="id">ID:</label>
         <input type="text" id="id" disabled><br>
@@ -39,7 +40,7 @@
 
     <script src="./assets/scripts/script.js"></script>
     <script src="./assets/scripts/style-cp.js"></script>
-    
+
     <script>
         document.querySelector('#btCadastrar').addEventListener('click', () => {
 
@@ -60,9 +61,14 @@
             })
                 .then(response => {
                     if (response.ok) {
-                      document.querySelector('#resposta').innerHTML = 'Produto cadastrado!';
+                        document.querySelector('#resposta').innerHTML = 'Produto cadastrado!';
                     }
                 })
+
+
+            const form = document.querySelector('#forms');
+            form.reset();
+
 
             getProdutos();
 
@@ -70,7 +76,7 @@
 
         getProdutos();
     </script>
-    
+
 </body>
 
 </html>

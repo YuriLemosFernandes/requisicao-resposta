@@ -5,8 +5,6 @@
        document.querySelector("a").style.fontSize = "15px";
        document.querySelector("a").style.color = "#a24261";
        document.querySelector("a:link").style.color = "#a24261";
-       document.querySelector("a:visited").style.color = "#d38787"
-       document.querySelector("a:hover").style.color = "#d38787"
 
        ////////////////////////////////////////////////////////////
 

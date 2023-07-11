@@ -2,10 +2,10 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "Snivy",
+      "nome": "bulbasaur",
       "evolucao": "primeira",
-      "tipo": "grama",
-      "imagem": "snivy.png"
+      "tipo": "planta",
+      "imagem": "bulbasaur.png"
     }
   ],
   "usuarios": [

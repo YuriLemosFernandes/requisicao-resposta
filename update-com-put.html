@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualização de produtos</title>
-    <link rel="stylesheet"  href="style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;1,100&display=swap');
-      </style>
+    </style>
 </head>
 
 <body>
@@ -16,65 +15,103 @@
         <a href="./">Home</a>
         <h1>Update usando o método PUT</h1>
     </header>
-    
+
 
 
     <div id="resposta"></div>
     <form action="" method="post">
-        <label for="id">ID:</label> 
+        <label for="id">ID:</label>
         <input type="text" id="id"><br>
 
-        <label for="nome">Nome:</label> 
+        <label for="nome">Nome:</label>
         <input type="text" id="nome"><br>
 
         <label for="evolucao">Evolução:</label>
         <input type="text" id="evolucao"><br>
 
-        <label for="tipo">Tipo:</label> 
+        <label for="tipo">Tipo:</label>
         <input type="text" id="tipo"><br>
 
         <label for="imagem">Imagem:</label>
         <input type="text" id="imagem"><br>
 
         <button type="button" id="btnAtualizar">Atualizar</button>
+        <button type="reset" id="reset" disabled>Cancelar</button>
     </form>
 
     <div id="listaProdutos"></div>
-    <script src="./assets/scripts/get.js"></script>
-    
+
+    <script src="./assets/scripts/script.js"></script>
+
     <script>
+
         
-        document.querySelector('#btnAtualizar').addEventListener('click',
-            () => {
-                const id = document.querySelector('#id').value
-                const dados = {
-                    'id': null,
-                    'nome': document.querySelector('#nome').value,
-                    'evolucao': document.querySelector('#evolucao').value,
-                    'tipo': document.querySelector('#tipo').value,
-                    'imagem': document.querySelector('#imagem').value
+        document.addEventListener('click', event => {
+
+            checaInputs();
+
+            if (event.target.classList.contains('produto')) {
+
+                const elementoBase = event.target;
+
+                document.querySelector('#id').value = elementoBase.querySelector('li:nth-child(1)').innerHTML;
+                document.querySelector('#nome').value = elementoBase.querySelector('li:nth-child(2)').innerHTML;
+                document.querySelector('#evolucao').value = elementoBase.querySelector('li:nth-child(3)').innerHTML;
+                document.querySelector('#tipo').value = elementoBase.querySelector('li:nth-child(4)').innerHTML;
+                document.querySelector('#imagem').value = elementoBase.querySelector('li:nth-child(5) img').getAttribute('src').split("images/").pop();
+
+                checaInputs(); 
+
+            } else if (event.target.parentElement.classList.contains('produto')) {
+
+                const elementoBase = event.target.parentElement;
+
+                document.querySelector('#id').value = elementoBase.querySelector('li:nth-child(1)').innerHTML;
+                document.querySelector('#nome').value = elementoBase.querySelector('li:nth-child(2)').innerHTML;
+                document.querySelector('#evolucao').value = elementoBase.querySelector('li:nth-child(3)').innerHTML;
+                document.querySelector('#tipo').value = elementoBase.querySelector('li:nth-child(4)').innerHTML;
+                document.querySelector('#imagem').value = elementoBase.querySelector('li:nth-child(5) img').getAttribute('src').split("images/").pop();
+
+                checaInputs();
+            }
+        });
+
+      
+        function checaInputs() {
+
+            const idPreenchido = document.querySelector('input#id').value !== "";
+            const nomePreenchido = document.querySelector('input#nome').value !== "";
+            const descricaoPreenchida = document.querySelector('input#evolucao').value !== "";
+            const precoPreenchido = document.querySelector('input#tipo').value !== "";
+            const imagemPreenchida = document.querySelector('input#imagem').value !== "";
+
+            if (descricaoPreenchida || precoPreenchido || imagemPreenchida || idPreenchido) {
+                document.querySelector('button#reset').removeAttribute('disabled');
+
+                if (idPreenchido) {
+                    document.querySelector('#btnAtualizar').removeAttribute('disabled');
                 }
 
-                fetch(`http://localhost:3000/produtos/${id}`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-type': 'application/json'
-                    },
-                    body: JSON.stringify(dados)
-                })
+            } else {
+                document.querySelector('#reset').setAttribute('disabled', '');
+                document.querySelector('#btnAtualizar').setAttribute('disabled', '');
+            }
 
-                    .then(response => {
-                        if (response.ok) {
-                            document.querySelector('#resposta').innerHTML = 'Produto Atualizado!';
-                        }
+        }
 
-                    })
+      
+        document.querySelector('form').addEventListener('reset', () => {
+            document.querySelector('#reset').setAttribute('disabled', '');
+            document.querySelector('#btnAtualizar').setAttribute('disabled', '');
+        });
 
-                getProdutos()
-            })
+     
+        document.addEventListener('keyup', () => {
+            checaInputs();
+        });
 
-        getProdutos()
 
+        getProdutos();
     </script>
 
 </body>
