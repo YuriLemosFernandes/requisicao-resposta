@@ -1,11 +1,8 @@
        
        ////////////////////// ---STYLE--- //////////////////////////
 
-       document.querySelector("button").style.padding = "10px";
        document.querySelector("button").style.backgroundColor = "#e9d6da";
        document.querySelector("button").style.borderColor = "#d99aa3";
-       document.querySelector("button").style.marginTop = "20px"
-       document.querySelector("button").style.marginLeft = "20px"
 
        ////////////////////////////////////////////////////////////
 
