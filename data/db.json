@@ -2,10 +2,24 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "bulbasaur",
-      "evolucao": "primeira",
+      "nome": "venusaur",
+      "evolucao": "terceira",
       "tipo": "planta",
-      "imagem": "bulbasaur.png"
+      "imagem": "venusaur.png"
+    },
+    {
+      "id": 2,
+      "nome": "charizard",
+      "evolucao": "terceira",
+      "tipo": "fogo",
+      "imagem": "charizard.png"
+    },
+    {
+      "id": 3,
+      "nome": "squirtle",
+      "evolucao": "primeira",
+      "tipo": "agua",
+      "imagem": "squirtle.png"
     }
   ],
   "usuarios": [
