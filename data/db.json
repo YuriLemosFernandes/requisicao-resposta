@@ -2,24 +2,31 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "venusaur",
-      "evolucao": "terceira",
-      "tipo": "planta",
-      "imagem": "venusaur.png"
+      "nome": "piplup",
+      "evolucao": "primeira",
+      "tipo": "agua",
+      "imagem": "piplup.png"
     },
     {
       "id": 2,
-      "nome": "charizard",
-      "evolucao": "terceira",
-      "tipo": "fogo",
-      "imagem": "charizard.png"
-    },
-    {
-      "id": 3,
       "nome": "squirtle",
       "evolucao": "primeira",
       "tipo": "agua",
       "imagem": "squirtle.png"
+    },
+    {
+      "id": 3,
+      "nome": "charmander",
+      "evolucao": "primeira",
+      "tipo": "fogo",
+      "imagem": "charmander.png"
+    },
+    {
+      "id": 4,
+      "nome": "snivy",
+      "evolucao": "primeira",
+      "tipo": "planta",
+      "imagem": "snivy.png"
     }
   ],
   "usuarios": [

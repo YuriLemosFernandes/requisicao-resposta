@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-left: auto;
-    
+
 }
 
 #listaProdutos {
@@ -26,7 +26,9 @@ body {
     line-height: 18px;
     letter-spacing: 0em;
     text-align: center;
-    
+    margin-left: 54px;
+    margin-right: 54px;
+
 }
 
 form {
@@ -79,6 +81,7 @@ input {
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25) inset;
     margin-left: 60px;
     margin-bottom: 10px;
+    padding-left: 5px;
 }
 
 label {
@@ -91,6 +94,8 @@ label {
     line-height: normal;
     margin-left: 67px;
 }
+
+
 
 #btnAtualizar {
     width: 167px;
@@ -167,23 +172,28 @@ label {
     line-height: 18px;
     letter-spacing: 0em;
     text-align: left;
+    padding: 5px;
 
 }
 
 .produto:nth-child(even) {
     background-color: #FFF1C1;
-    padding-left: 30px;
-    padding-right: 30px;
-    height: 60px; 
-
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 60px;
+    border-bottom: 1px solid #000;
 }
-    
+
 
 .produto:nth-child(odd) {
     background-color: #FFF;
-    padding-left: 30px;
-    padding-right: 30px;
-    height: 60px; 
-    
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 60px;
+    border-bottom: 1px solid #000;
 }
 
+#resposta {
+    padding-left: 100px;
+    padding-right: auto;
+}

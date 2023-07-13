@@ -22,7 +22,7 @@
     <div id="resposta"> </div>
         
         <form action="" method="post">
-            <h1 id="titulo">Alteração de Produtos</h1>
+            <h1 id="titulo">Alteração de Produtos</h1><br>
             <label for="id">ID</label><br>
             <input type="text" id="id" placeholder="Digite o ID do pokémon"><br>
 
@@ -98,6 +98,8 @@
 
                 if (idPreenchido) {
                     document.querySelector('#btnAtualizar').removeAttribute('disabled');
+                } else{
+                    document.querySelector('btnAtualizar').setAttribute('disabled', '');
                 }
 
             } else {
@@ -139,7 +141,8 @@
             })
                 .then(response => {
                     if (response.ok) {
-                        document.querySelector('#resposta').innerHTML = 'Produto atualizado!';
+                        document.querySelector('#resposta').alert
+                         = 'Produto atualizado!';
                     }
                 })
 
