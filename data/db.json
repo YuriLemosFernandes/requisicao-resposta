@@ -1,13 +1,6 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "nome": "piplup",
-      "evolucao": "primeira",
-      "tipo": "agua",
-      "imagem": "piplup.png"
-    },
-    {
       "id": 2,
       "nome": "squirtle",
       "evolucao": "primeira",
@@ -20,13 +13,6 @@
       "evolucao": "primeira",
       "tipo": "fogo",
       "imagem": "charmander.png"
-    },
-    {
-      "id": 4,
-      "nome": "snivy",
-      "evolucao": "primeira",
-      "tipo": "planta",
-      "imagem": "snivy.png"
     }
   ],
   "usuarios": [

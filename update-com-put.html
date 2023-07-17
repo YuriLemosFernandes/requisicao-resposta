@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atualização de produtos</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/style-botao.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;1,100&display=swap');
     </style>
@@ -58,9 +59,9 @@
 
             checaInputs();
 
-            if (event.target.classList.contains('produto')) {
+            if (event.target.closest('ul').classList.contains('produto')) {
 
-                const elementoBase = event.target;
+                const elementoBase = event.target.closest('ul');
 
                 document.querySelector('#id').value = elementoBase.querySelector('li:nth-child(1)').innerHTML;
                 document.querySelector('#nome').value = elementoBase.querySelector('li:nth-child(2)').innerHTML;

@@ -197,3 +197,33 @@ label {
     padding-left: 100px;
     padding-right: auto;
 }
+
+.sub-titulo-index {
+    margin-left: 50px;
+    font-size: 25px;
+    color: var(--primary-color);
+}
+
+.titulo-index {
+    margin-left: 50px;
+    font-size: 30px;
+}
+
+.atalho-index {
+    margin-left: 50px;
+    
+}
+
+a:link, a:hover, a:visited{
+    color: var(--primary-color);
+}
+
+
+p {
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 15px;
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
