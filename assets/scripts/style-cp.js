@@ -13,7 +13,6 @@
 
        ////////////////////////////////////////////////////////////
 
-       document.querySelector("h1").style.color = "#d38787";
        document.querySelector("h1").style.textAlign = "center";
        document.querySelector("h1").style.fontSize = "50px";
 

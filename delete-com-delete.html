@@ -14,11 +14,19 @@
         <a href="./">Home</a>
         <h1>Delete com DELETE</h1>
     </header>
-    
+
 
     <div id="listaProdutos"></div>
 
-    
+    <div>
+        <input type="checkbox" class="checkbox" id="chk" />
+        <label class="label" for="chk">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
+
 
     <script src="./assets/scripts/script.js"></script>
 
@@ -28,20 +36,20 @@
 
         document.addEventListener('click', event => {
 
-            if(event.target.classList.contains('botao-delete')) {
-                
+            if (event.target.classList.contains('botao-delete')) {
+
                 fetch(`http://localhost:3000/produtos/${event.target.value}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-type': 'application/json'
                     }
                 })
-                .then(resposta => {
-                    if(resposta.ok) {
-                        alert('Produto apagado!');
-                        location.reload();
-                    }
-                })
+                    .then(resposta => {
+                        if (resposta.ok) {
+                            alert('Produto apagado!');
+                            location.reload();
+                        }
+                    })
 
             }
         });
@@ -72,7 +80,7 @@
                     ul.appendChild(document.createElement('li')).appendChild(img).setAttribute('src', `./assets/images/${resposta[i].imagem}`);
 
                     const liBotao = document.createElement('li');
-                    
+
                     const botao = document.createElement('button');
                     botao.type = 'button';
                     botao.innerHTML = '✖️';
@@ -87,7 +95,47 @@
                 }
 
             });
-            
+    </script>
+
+
+    <script>
+
+        const tema = localStorage.getItem('tema') ?? 'light';
+
+        document.documentElement.setAttribute('data-theme', tema);
+
+        const btsComponentes = document.querySelectorAll('#chk');
+
+        btsComponentes.forEach(elRaiz => {
+            elRaiz.classList.add(tema);
+        })
+
+        document.querySelector('#chk').addEventListener('click', () => {
+
+            btsComponentes.forEach(elRaiz => {
+
+                if (elRaiz.classList.contains('light')) {
+
+                    elRaiz.classList.replace('light', 'dark');
+
+                    localStorage.setItem('tema', 'dark');
+
+                    document.documentElement.setAttribute('data-theme', 'dark');
+
+                } else {
+
+                    elRaiz.classList.replace('dark', 'light');
+
+                    localStorage.setItem('tema', 'light');
+
+                    document.documentElement.setAttribute('data-theme', 'light')
+                }
+
+            })
+
+
+        });
+
     </script>
 </body>
 
