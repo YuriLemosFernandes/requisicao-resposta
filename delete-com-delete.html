@@ -38,7 +38,7 @@
 
             if (event.target.classList.contains('botao-delete')) {
 
-                fetch(`http://localhost:3000/produtos/${event.target.value}`, {
+                fetch(`https://json-server-j1d3.vercel.app/produtos/${event.target.value}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-type': 'application/json'
@@ -54,7 +54,7 @@
             }
         });
 
-        fetch('http://localhost:3000/produtos/', {
+        fetch('https://json-server-j1d3.vercel.app/produtos', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'

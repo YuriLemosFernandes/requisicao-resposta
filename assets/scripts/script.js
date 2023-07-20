@@ -25,7 +25,7 @@ document.head.append(style);
 
 function getProdutos(btnDelete = false) {
 
-    fetch('http://localhost:3000/produtos/', {
+    fetch('https://json-server-j1d3.vercel.app/produtos', {
         method: 'GET',
         headers: {
             'Content-type': 'application/json'

@@ -140,7 +140,7 @@
                 'imagem': document.querySelector('#imagem').value
             };
 
-            fetch(`http://localhost:3000/produtos/${id}`, {
+            fetch(`https://json-server-j1d3.vercel.app/produtos/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json'
